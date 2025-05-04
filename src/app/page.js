@@ -1,28 +1,47 @@
-import ClientWrapper from '../components/ClientWrapper'
+import ClientWrapper from "../components/ClientWrapper";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24">
-      <div className="max-w-3xl w-full flex flex-col gap-8">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold mb-2">Face Distortion Demo</h1>
-          <p className="text-gray-600">
-            This app uses ML5.js and P5.js to detect and distort facial features.
-            Click &quot;Start Camera&quot; to begin the experience.
-          </p>
-        </div>
-        
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <ClientWrapper />
-        </div>
-        
-        <div className="text-sm text-gray-500">
-          <p>
-            Note: This app requires camera access and works best in good lighting.
-            All processing happens locally in your browser.
-          </p>
-        </div>
-      </div>
-    </main>
-  )
+    return (
+        <main className="min-h-screen w-full flex flex-col md:flex-row bg-black text-[#c3d1c3] font-mono">
+            {/* Left Column */}
+            <section className="flex-1 flex flex-col justify-between p-8 md:p-16">
+                <div>
+                    <div className="cyberpunk text-[7vw] leading-none mb-8 select-none">
+                        Digital
+                        <br />
+                        Camo
+                    </div>
+                    <div className="uppercase text-xs tracking-widest mb-8 max-w-xs">
+                        Hiding in Plain Sight
+                    </div>
+                    <div className="mt-12 max-w-xl text-base text-[#c3d1c3]">
+                        <p>
+                            <strong>How it works:</strong> This algorithm uses
+                            real-time face detection and landmark recognition to
+                            identify key facial features such as the eyes, nose,
+                            and mouth. It then applies digital distortion to
+                            these regions using p5.js, creating a camouflaged
+                            effect that obscures your digital identity while
+                            preserving the overall structure of your face.
+                        </p>
+                        <p className="mt-4">
+                            <strong>Purpose:</strong> The goal is to explore new
+                            forms of digital privacy and creative
+                            self-expression. By distorting facial features in
+                            real time, this project demonstrates how technology
+                            can be used to both reveal and conceal identity in
+                            the age of ubiquitous cameras and AI.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Right Column: FaceDistortion Camera */}
+            <section className="flex items-center justify-center flex-1 p-8 md:p-16">
+                <div className="w-[640px] h-[480px]">
+                    <ClientWrapper />
+                </div>
+            </section>
+        </main>
+    );
 }
